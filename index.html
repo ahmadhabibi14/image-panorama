@@ -24,7 +24,7 @@
   </style>
 </head>
 
-<body class="bg-zinc-50 min-h-screen flex">
+<body class="bg-zinc-50 min-h-screen flex flex-col justify-between">
   <section
     class="h-full flex items-center justify-center flex-col relative -gap-4 p-4 bg-zinc-200 h-fit mt-12 lg:mt-6 rounded-xl shadow-lg lg:w-fit w-full lg:mx-auto mx-4 ">
     <header>
@@ -34,11 +34,15 @@
       <div id="panorama"></div>
     </div>
   </section>
+  <footer class="text-zinc-700 font-semibold flex justify-center mb-3">
+    <p>Copyright &copy; <span id="year"></span></p>
+  </footer>
   <script>
     pannellum.viewer('panorama', {
       "type": "equirectangular",
       "panorama": "./panorama.jpg"
     });
+    document.getElementById("year").innerText = new Date().getFullYear();
   </script>
 
 </body>
